@@ -111,8 +111,7 @@ body {
   list-style: none;
   grid-column: 1 / -1;
   grid-template-columns: repeat(4, 220px);
-
-  perspective: 1000px; /* Для анимации */
+  perspective: 1000px;
 }
 
 .card {
@@ -126,7 +125,6 @@ body {
   border: 1px solid #bad6eb;
   border-radius: 10px;
   transition: transform var(--animation-duration);
-
   justify-items: center;
   transform-style: preserve-3d;
 }
@@ -138,8 +136,6 @@ body {
   backface-visibility: hidden;
 }
 
-/* Рубашка */
-
 .card::after {
   width: 218px;
   height: 158px;
@@ -150,8 +146,6 @@ body {
   grid-area: 1 / 1 / 2 / 2;
   backface-visibility: hidden;
 }
-
-/* Финальная отметка */
 
 .card::before {
   z-index: 1;
