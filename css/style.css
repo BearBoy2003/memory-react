@@ -182,3 +182,71 @@ body {
   transition-timing-function: ease-in-out;
   transition-duration: var(--animation-duration);
 }
+
+.modal {
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  overflow-y: hidden;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(140, 174, 200, 0.8);
+  animation: fadeIn calc(var(--animation-duration) + 0.1s) calc(2 * var(--animation-duration)) both;
+  pointer-events: auto;
+  overscroll-behavior: contain;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.modal-box {
+  position: relative;
+  box-sizing: border-box;
+  width: 320px;
+  min-height: 285px;
+  max-height: calc(100vh - 60px);
+  padding: 72px 40px 36px;
+  text-align: center;
+  background-color: rgb(255, 255, 255);
+  border-radius: 10px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+}
+
+.modal-box::before {
+  position: absolute;
+  top: -75px;
+  left: -30px;
+  width: 376px;
+  height: 130px;
+  content: '';
+  background-image: url('../img/ribbon-with-stars.svg');
+  background-repeat: no-repeat;
+  background-position: top center;
+}
+
+.modal-caption {
+  margin: 0 0 12px;
+  font-size: 24px;
+  line-height: 32px;
+}
+
+.modal-description {
+  margin: 0 0 32px;
+  font-size: 16px;
+  line-height: 22px;
+}
+
+.modal .button {
+  width: 100%;
+}
